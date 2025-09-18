@@ -103,11 +103,11 @@ async def main():
                 message = (
                     f"買單深度不足\n"
                     f"買單深度低於 {limit} USDT！\n"
-                    f"需要補上: {(limit - bids_depth_USDT):2f} USDT\n"
-                    f"往下補到價格：{lower_bound:7f} 就好\n"
+                    f"需要補上: {round(limit - bids_depth_USDT,2)} USDT\n"
+                    f"往下補到價格：{round(lower_bound,7)} 就好\n"
                     f"最新價格: {close} USDT\n"
-                    f"買單深度(USDT): {bids_depth_USDT:2f} USDT\n"
-                    f"賣單深度(USDT): {asks_depth_USDT:2f} USDT\n"
+                    f"買單深度(USDT): {round(bids_depth_USDT,2)} USDT\n"
+                    f"賣單深度(USDT): {round(asks_depth_USDT,2)} USDT\n"
                 )
                 send_telegram_message(message)
                 logging.info(message)
@@ -117,11 +117,11 @@ async def main():
                 message = (
                     f"賣單深度不足\n"
                     f"賣單深度低於 {limit} USDT！\n"
-                    f"需要補上: {(limit - asks_depth_USDT):2f} USDT\n"
-                    f"往上補到價格：{upper_bound:7f} 就好\n"
+                    f"需要補上: {round(limit - asks_depth_USDT,2)} USDT\n"
+                    f"往上補到價格：{round(upper_bound,7)} 就好\n"
                     f"最新價格: {close} USDT\n"
-                    f"買單深度(USDT): {bids_depth_USDT:2f} USDT\n"
-                    f"賣單深度(USDT): {asks_depth_USDT:2f} USDT\n"
+                    f"買單深度(USDT): {round(bids_depth_USDT,2)} USDT\n"
+                    f"賣單深度(USDT): {round(asks_depth_USDT,2)} USDT\n"
                 )
                 send_telegram_message(message)
                 logging.info(message)
