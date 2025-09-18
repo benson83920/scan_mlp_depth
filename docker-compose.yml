@@ -1,0 +1,13 @@
+services:
+    # container 1
+    scan_mlp_depth:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: always
+        volumes:
+            - .:/scan_mlp_depth
+            - ./logs:/app/logs # 新增這一行，將容器的 /app/logs 掛載到主機的 ./logs
+        env_file:
+            - .env
+        command: python3 main.py
